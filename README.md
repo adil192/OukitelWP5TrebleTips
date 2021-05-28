@@ -56,7 +56,7 @@ Sharing my experience with flashing a GSI on a friend's Oukitel WP5 (3GB model).
 
 I've uploaded the files I've found as they're kinda hard to find: https://mega.nz/folder/kcszXIbK#zU8v6Gyo81ZS3y2fsHHoyQ.
 
-- `Oukitel_WP5_MT6761_20200114_9.0.tar.xz`, needs to be extracted. Use this with the SP Flash Tool to return to stock in case something goes wrong. This worked on my model but there's no guarantee that it'll work on yours.
+- `Oukitel_WP5_MT6761_20200114_9.0.7z`, needs to be extracted. Use this with the SP Flash Tool to return to stock in case something goes wrong. This worked on my model but there's no guarantee that it'll work on yours.
 - `patched_vbmeta.img` This disables verified booting (AVB). Install with `fastboot flash vbmeta patched_vbmeta.img`.
 - `Software upgrade operation video tutorial.mp4`  A video guide (not by me) on how to use the SP Flash Tool with Windows.
 - `SP Flash Tool.7z` The SP Flash Tool itself. Contains the Linux version (not working) and the Windows version.

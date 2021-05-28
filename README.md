@@ -7,7 +7,7 @@ Sharing my experience with flashing a GSI on a friend's Oukitel WP5 (3GB model).
 ## Which firmware to use?
 
  - Use the 9.0 firmware `Oukitel_WP5_MT6761_20200114_9.0`.
- - The 10.0 firmware `OUKITEL_WP5_EEA_10.0_V09_20201119_192903` DOES NOT BOOT! I assume this is for the 4GB model?
+ - The 10.0 firmware `OUKITEL_WP5_EEA_10.0_V09_20201119_192903` DOES NOT BOOT! (This is the one you can get from [Oukitel's download center](https://oukitel.com/pages/download-center). I assume it's for the 4GB model?)
  - Make sure to also wipe userdata and cache from STOCK RECOVERY (not fastboot) or you won't get to use the full 32GB storage, or the system will boot and tell you that decryption failed.
 
 
@@ -15,7 +15,7 @@ Sharing my experience with flashing a GSI on a friend's Oukitel WP5 (3GB model).
 ## SP Flash Tool
 
 - You can use this tool to flash back to the stock rom. The Linux version did not work for me, so either use Windows or just flash what you need with fastboot (if you can still access fastboot). The androidmtk.com guide below claims that reflashing the preloader can brick your phone, so exercise caution.
-- You can find instructions and downloads on [Oukitel's download center](https://oukitel.com/pages/download-center). There are also plenty of guides like this one: https://androidmtk.com/flash-stock-rom-using-smart-phone-flash-tool.
+- You can find instructions and downloads on [Oukitel's download center](https://oukitel.com/pages/download-center), or see the downloads at the end. There are also plenty of guides like this one: https://androidmtk.com/flash-stock-rom-using-smart-phone-flash-tool.
 
 
 
@@ -35,16 +35,15 @@ Sharing my experience with flashing a GSI on a friend's Oukitel WP5 (3GB model).
 - Boot the device to fastboot. If the device is already booted, you can use `adb reboot fastboot`. Otherwise, from a shut-down WP5, press and hold the `Vol+` and `Power` buttons. Press `Vol+` until you reach fastboot, then press `Vol-` to start.
 - Enter the following commands, substituting file names where needed:
   1. system: `fastboot flash system system-arm32-ab.img`.
-  2. vmbeta: `fastboot flash vbmeta patched_vbmeta.img`. 
+  2. vmbeta: `fastboot flash vbmeta patched_vbmeta.img`. Flashing the stock vbmeta like this `fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img` seems to work, but I haven't tried it.
 
-- Reboot to recovery: Press and hold `Vol+` and `Power` like before until the screen turns black. Then release the keys for 5-10 seconds, before pressing them again to get into recovery. You will then see a "No command" prompt; to get past this, press `Vol+` while pressing `Power`. If you do this right, you'll be presented with a few options. Select to wipe userdata, and then select to wipe cache. This step is important!
+- Reboot to recovery: Press and hold `Vol+` and `Power` like before until the screen turns black. Then release the keys for 5-10 seconds, before pressing them again to get into recovery. You will then see a "No command" prompt; to get past this, briefly press `Vol+` while pressing `Power`. If you do this right, you'll be presented with a few options. Select to wipe userdata, and then select to wipe cache. This step is important!
 - Finally, reboot to system and enjoy!
 
 
 
 ## Downloads
-
-https://mega.nz/folder/kcszXIbK#zU8v6Gyo81ZS3y2fsHHoyQ
+I've uploaded the files I've found as they're kinda hard to find: https://mega.nz/folder/kcszXIbK#zU8v6Gyo81ZS3y2fsHHoyQ.
 
 - `Oukitel_WP5_MT6761_20200114_9.0.tar.xz`, needs to be extracted. Use this with the SP Flash Tool to return to stock in case something goes wrong.
 - `patched_vbmeta.img` This disables verified booting (AVB). Install with `fastboot flash vbmeta patched_vbmeta.img`.

@@ -9,8 +9,7 @@ Sharing my experience with flashing a GSI on a friend's Oukitel WP5 (3GB model).
 - (The 3GB version of) the WP5 uses GSIs in the form `system-arm32_binder64-ab.img`. For example, I used `system-roar-arm32_binder64-ab-vndklite-gapps.img`.
 - If the GSI is named with `vndklite` it means the system is read-write enabled.
 - I wouldn't bother with Magisk (unless it's improved since May 2021).
-- PHH Treble can be found at https://github.com/phhusson/treble_experimentations/releases. If you download a `.img.xz` file, you will need to extract the `.img` file inside.
-
+- phhusson's AOSP can be found at https://github.com/phhusson/treble_experimentations/releases. phhusson also has a [GSI list](https://github.com/phhusson/treble_experimentations/wiki/Generic-System-Image-(GSI)-list) if you fancy something different. If you download a `.img.xz` file, you will need to extract the `.img` file inside.
 
 
 ## Installing a GSI
